@@ -1,11 +1,6 @@
 // Функция для проверки длины строки;
 const checkLengthToString = function (string, maxLength) {
-  const lengthString = string.length;
-  if (lengthString <= maxLength) {
-    return true;
-  } else {
-    return false;
-  }
+  return string.length <= maxLength;
 };
 
 checkLengthToString('проверяемая строка', 20);
@@ -17,17 +12,11 @@ const isPalindrome = function (string) {
   let changeString = string.replaceAll(' ', '');
   changeString = changeString.toLowerCase();
 
-  let workString = [];
+  let workString = '';
   for (let i = changeString.length - 1; i >= 0; i--) {
     workString = workString + changeString[i];
   }
-
-  if (changeString === workString) {
-    return true;
-  } else {
-    return false;
-  }
-
+  return changeString === workString;
 };
 
 isPalindrome('Лёша на полке клопа нашёл ');
