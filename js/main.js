@@ -34,17 +34,6 @@ const generateIdArray = createIdGenerator();
 const generateUrlPhotos = createIdGenerator();
 const generateIdComments = createIdGenerator();
 
-// Функция для создания массива из сгенерированных объектов
-const getGenerateArray = () => {
-  return  {
-    id: generateIdArray(),
-    url: getRandomUrlPhotos(),
-    description: getRandomDescription(),
-    likes: getRandomLikes(15, 200), // количество лайков, поставленных фотографии, случайное число от 15 до 200;
-    comments: getGenerateComments()
-  };
-};
-
 // Функция для создания адреса картинки - фото (строка);
 function getRandomUrlPhotos() {
   return `photos/'${generateUrlPhotos()}.jpg`;
@@ -62,7 +51,7 @@ function getRandomLikes(min, max) {
 
 // Функция для создания масиива комментариев
 const getGenerateComments = function () {
-  let comments = [];
+  const comments = [];
   for (let i = 0; i <= getValueInRange (0, 30); i++) {
     comments.push({
       id: generateIdComments(),
@@ -119,7 +108,18 @@ function getValueInRange (min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const generateArray = Array.from({length:GENERATE_ARRAY}, getGenerateArray);
+// Функция для создания массива из сгенерированных объектов
+const getGenerateArray = function () {
+  return {
+    id: generateIdArray(),
+    url: getRandomUrlPhotos(),
+    description: getRandomDescription(),
+    likes: getRandomLikes(15, 200), // количество лайков, поставленных фотографии, случайное число от 15 до 200;
+    comments: getGenerateComments()
+  };
+};
+
+Array.from({length:GENERATE_ARRAY}, getGenerateArray);
 
 // Для проверки работы функции по созданию массива данных
 // console.table(generateArray);
