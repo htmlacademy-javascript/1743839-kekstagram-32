@@ -49,7 +49,7 @@ function getRandomImgAvatar() {
 // Ф-ция для получения случайного количества (1 или 2) сообщений;
 function getRandomMessage() {
   let message = '';
-  let lengthArray = messageMax;
+  const lengthArray = messageMax;
   for (let i = 0; i <= getValueInRange(messageMin, lengthArray); i++) {
     message += MESSAGES_COMMENTS[(Math.floor(Math.random() * MESSAGES_COMMENTS.length))];
   }
