@@ -32,31 +32,19 @@ const NAMES = [
   'Константин','Никита','Михаил','Борис', 'Виктор','Геннадий','Вячеслав','Владимир','Андрей', 'Анатолий','Илья','Кирилл','Олег'
 ];
 
-// Количество лайков, поставленных фотографии, случайное число от 15 до 200;
-const likesMin = 15;
-const likesMax = 200;
+const StatusCode = {
+  // Количество лайков, поставленных фотографии, случайное число от 15 до 200;
+  likesMin: 15,
+  likesMax: 200,
+  // Количество комментариев, случайное число от 0 до 30;
+  commentsMin: 0,
+  commentsMax: 30,
+  // Число: случайный адрес картинки - аватарки (строка) от 1 до 6;
+  imgAvatarMin: 1,
+  imgAvatarMax: 6,
+  // Число: случайное количество сообщений от 1 до 2;
+  messageMin: 1,
+  messageMax: 2
+};
 
-// Количество комментариев, случайное число от 0 до 30;
-const commentsMin = 0;
-const commentsMax = 30;
-
-// Число: случайный адрес картинки - аватарки (строка) от 1 до 6;
-const imgAvatarMin = 1;
-const imgAvatarMax = 6;
-
-// Число: случайное количество сообщений от 1 до 2;
-const messageMin = 0;
-const messageMax = 1;
-
-export {GENERATE_ARRAY};
-export {DESCRIPTIONS_PHOTOS};
-export {MESSAGES_COMMENTS};
-export {NAMES};
-export {likesMin};
-export {likesMax};
-export {commentsMin};
-export {commentsMax};
-export {imgAvatarMin};
-export {imgAvatarMax};
-export {messageMin};
-export {messageMax};
+export {GENERATE_ARRAY, DESCRIPTIONS_PHOTOS, MESSAGES_COMMENTS, NAMES, StatusCode};

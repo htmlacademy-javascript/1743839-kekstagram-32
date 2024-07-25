@@ -1,7 +1,7 @@
-import {getGenerateArray} from './data.js';
 import {GENERATE_ARRAY} from './initial-data.js';
+import {getGenerateArray} from './data.js';
 
-Array.from({length:GENERATE_ARRAY}, getGenerateArray);
+getGenerateArray(GENERATE_ARRAY);
 
 // Для проверки работы функции
-// console.table(Array.from({length:GENERATE_ARRAY}, getGenerateArray));
+// console.table(arrayGenerateData);

@@ -1,20 +1,19 @@
-import {generateIdArray} from './util.js';
-import {getRandomUrlPhotos} from './util.js';
-import {getRandomDescription} from './util.js';
-import {getRandomLikes} from './util.js';
-import {getGenerateComments} from './util.js';
-import {likesMin} from './initial-data.js';
-import {likesMax} from './initial-data.js';
+import {getRandomDescription, getRandomLikes, getGenerateComments} from './util.js';
+import {StatusCode} from './initial-data.js';
 
-// Функция для создания массива из сгенерированных объектов
-const getGenerateArray = function () {
-  return {
-    id: generateIdArray(),
-    url: getRandomUrlPhotos(),
-    description: getRandomDescription(),
-    likes: getRandomLikes(likesMin, likesMax),
-    comments: getGenerateComments()
-  };
+const getGenerateArray = function (object) {
+  const generateArray = [];
+  for (let i = 0; i < object; i++) {
+    const number = i + 1;
+    generateArray.push({
+      id: number,
+      url: `photos/'${number}.jpg`,
+      description: getRandomDescription(),
+      likes: getRandomLikes(StatusCode.likesMin, StatusCode.likesMax),
+      comments: getGenerateComments()
+    });
+  }
+  return generateArray;
 };
 
 export {getGenerateArray};
