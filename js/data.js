@@ -7,7 +7,7 @@ const getGenerateArray = function (object) {
     const number = i + 1;
     generateArray.push({
       id: number,
-      url: `photos/'${number}.jpg`,
+      url: `photos/${number}.jpg`,
       description: getRandomDescription(),
       likes: getRandomLikes(StatusCode.likesMin, StatusCode.likesMax),
       comments: getGenerateComments()
