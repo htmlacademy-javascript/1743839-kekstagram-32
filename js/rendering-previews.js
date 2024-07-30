@@ -1,7 +1,7 @@
-import {GENERATE_ARRAY} from './initial-data.js';
-import {getGenerateArray} from './data.js';
+import {getPictures} from './data.js';
+import {StatusCode} from './initial-data.js';
 
-const picturesArray = getGenerateArray(GENERATE_ARRAY);
+const picturesArray = getPictures();
 // Для проверки соответствия данных;
 // console.table(picturesArray);
 
@@ -25,8 +25,8 @@ const createPreview = function (preview) {
 
   const picture = makeElement('img', 'product__image');
   picture.src = preview.url;
-  picture.width = '182';
-  picture.height = '182';
+  picture.width = StatusCode.widthPreview;
+  picture.height = StatusCode.heightPreview;
   picture.alt = preview.description;
   reference.appendChild(picture);
 
@@ -48,6 +48,3 @@ for (let i = 0; i < picturesArray.length; i++) {
   const cardItem = createPreview(picturesArray[i]);
   cardList.appendChild(cardItem);
 }
-
-export {picturesArray};
-export {makeElement};
