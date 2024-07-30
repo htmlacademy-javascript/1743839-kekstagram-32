@@ -48,3 +48,6 @@ for (let i = 0; i < picturesArray.length; i++) {
   const cardItem = createPreview(picturesArray[i]);
   cardList.appendChild(cardItem);
 }
+
+export {picturesArray};
+export {makeElement};
