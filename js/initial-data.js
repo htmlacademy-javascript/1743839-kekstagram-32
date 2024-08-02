@@ -32,7 +32,7 @@ const NAMES = [
   'Константин','Никита','Михаил','Борис', 'Виктор','Геннадий','Вячеслав','Владимир','Андрей', 'Анатолий','Илья','Кирилл','Олег'
 ];
 
-const StatusCode = {
+const informationData = {
   // Количество лайков, поставленных фотографии, случайное число от 15 до 200;
   likesMin: 15,
   likesMax: 200,
@@ -44,7 +44,10 @@ const StatusCode = {
   imgAvatarMax: 6,
   // Число: случайное количество сообщений от 1 до 2;
   messageMin: 1,
-  messageMax: 2
+  messageMax: 2,
+  // Размеры картинки - preview;
+  widthPreview: 182,
+  heightPreview: 182
 };
 
-export {GENERATE_ARRAY, DESCRIPTIONS_PHOTOS, MESSAGES_COMMENTS, NAMES, StatusCode};
+export {GENERATE_ARRAY, DESCRIPTIONS_PHOTOS, MESSAGES_COMMENTS, NAMES, informationData};

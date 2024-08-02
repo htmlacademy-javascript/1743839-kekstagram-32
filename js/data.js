@@ -1,19 +1,19 @@
 import {getRandomDescription, getRandomLikes, getGenerateComments} from './util.js';
-import {StatusCode} from './initial-data.js';
+import {GENERATE_ARRAY, informationData} from './initial-data.js';
 
-const getGenerateArray = function (object) {
+const getPictures = function () {
   const generateArray = [];
-  for (let i = 0; i < object; i++) {
+  for (let i = 0; i < GENERATE_ARRAY; i++) {
     const number = i + 1;
     generateArray.push({
       id: number,
-      url: `photos/'${number}.jpg`,
+      url: `photos/${number}.jpg`,
       description: getRandomDescription(),
-      likes: getRandomLikes(StatusCode.likesMin, StatusCode.likesMax),
+      likes: getRandomLikes(informationData.likesMin, informationData.likesMax),
       comments: getGenerateComments()
     });
   }
   return generateArray;
 };
 
-export {getGenerateArray};
+export {getPictures};
