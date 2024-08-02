@@ -1,4 +1,4 @@
-import {DESCRIPTIONS_PHOTOS, MESSAGES_COMMENTS, NAMES, StatusCode} from './initial-data.js';
+import {DESCRIPTIONS_PHOTOS, MESSAGES_COMMENTS, NAMES, informationData} from './initial-data.js';
 
 // Функция для получения случайного описание картинки;
 function getRandomDescription() {
@@ -18,11 +18,11 @@ function getRandomLikes(min, max) {
 // Функция для создания масиива комментариев
 const getGenerateComments = function () {
   const comments = [];
-  for (let i = 0; i < getValueInRange(StatusCode.commentsMin, StatusCode.commentsMax); i++) {
+  for (let i = 0; i < getValueInRange(informationData.commentsMin, informationData.commentsMax); i++) {
     const number = i + 1;
     comments.push({
       id: number,
-      avatar: `img/avatar-${getValueInRange (StatusCode.imgAvatarMin, StatusCode.imgAvatarMax)}.svg`,
+      avatar: `img/avatar-${getValueInRange (informationData.imgAvatarMin, informationData.imgAvatarMax)}.svg`,
       message: getRandomMessage(),
       name: getRandomName()
     });
@@ -34,7 +34,7 @@ const getGenerateComments = function () {
 function getRandomMessage() {
   let message = '';
   // const lengthArray = MESSAGES_COMMENTS.length;
-  for (let i = 1; i <= getValueInRange(StatusCode.messageMin, StatusCode.messageMax); i++) {
+  for (let i = 1; i <= getValueInRange(informationData.messageMin, informationData.messageMax); i++) {
     message += MESSAGES_COMMENTS[(Math.floor(Math.random() * MESSAGES_COMMENTS.length))];
   }
   return message;

@@ -1,5 +1,5 @@
 import {getPictures} from './data.js';
-import {StatusCode} from './initial-data.js';
+import {informationData} from './initial-data.js';
 
 const picturesArray = getPictures();
 // Для проверки соответствия данных;
@@ -25,8 +25,8 @@ const createPreview = function (preview) {
 
   const picture = makeElement('img', 'product__image');
   picture.src = preview.url;
-  picture.width = StatusCode.widthPreview;
-  picture.height = StatusCode.heightPreview;
+  picture.width = informationData.widthPreview;
+  picture.height = informationData.heightPreview;
   picture.alt = preview.description;
   reference.appendChild(picture);
 
