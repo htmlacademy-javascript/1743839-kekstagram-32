@@ -21,6 +21,7 @@ const createPreview = function (preview) {
 
   const reference = makeElement('a', 'picture');
   reference.href = '#';
+  reference.dataset.previewId = preview.id;
   fragment.appendChild(reference);
 
   const picture = makeElement('img', 'product__image');
@@ -48,3 +49,5 @@ for (let i = 0; i < picturesArray.length; i++) {
   const cardItem = createPreview(picturesArray[i]);
   cardList.appendChild(cardItem);
 }
+
+export {cardList, picturesArray, makeElement};
